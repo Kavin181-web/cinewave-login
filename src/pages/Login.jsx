@@ -24,7 +24,7 @@ function Login() {
 
         try {
             const response = await axios.post(
-                "http://localhost:5000/login",
+                "https://cinewave-backend-six.vercel.app/login",
                 {
                     email,
                     password,
@@ -59,11 +59,10 @@ function Login() {
             {/* Toast Notification */}
             {message && (
                 <div
-                    className={`fixed top-5 right-5 px-6 py-4 rounded-lg shadow-2xl text-white font-medium z-50 transition-all duration-300 ${
-                        message === "Login Successful"
-                            ? "bg-green-600"
-                            : "bg-red-600"
-                    }`}
+                    className={`fixed top-5 right-5 px-6 py-4 rounded-lg shadow-2xl text-white font-medium z-50 transition-all duration-300 ${message === "Login Successful"
+                        ? "bg-green-600"
+                        : "bg-red-600"
+                        }`}
                 >
                     {message === "Login Successful" ? "✅ " : "❌ "}
                     {message}
